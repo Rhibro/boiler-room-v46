@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '"Roboto Mono", serif;';
+}
+
+body {
+    background-image: url(/images/rustic-desk-top.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+h1 {
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    padding-bottom: 2rem;
+    font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
+}
+
+h2 {
+    font-size: clamp(1rem, 2vw + 1rem, 2rem);
+}
+
+
+  

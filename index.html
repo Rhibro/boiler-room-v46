@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" 
+        rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous"
+  />
+    <title>My Note App</title>
+</head>
+<body>
+    <h1>My Note App</h1>
+    <div class="wrapper">
+        <!-- <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-content">
+                <button class="close-button" id="closeButton">&times;</button>
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+                    <input
+                        type="text"
+                        name="text"
+                        class="modal-input"
+                        id="modal-input"
+                        placeholder="Redigera uppgift här"
+                    />
+                <button id="editBtn" type="submit">Edit Note</button>
+            </div> -->
+        </div>
+        <div class="input-container">
+          <form class="container-field">
+            <div class="input-wrapper">
+              <input
+                type="text"
+                name="note"
+                class="note-input"
+                id="note-input"
+                placeholder="Your note..."
+              />
+              <button id="addBtn" type="submit">Add to Notes</button>
+            </div>
+          </form>
+        </div>
+        <div class="input-container filter-container">
+          <input
+            type="text"
+            id="notefilter"
+            placeholder="Search"
+            oninput="filterNotes()"
+          />
+        </div>
+        <div class="container-note">
+          <h2>Your Notes</h2>
+          <div class="note-item">
+            <p class="note">A note</p>
+            <div class="icons">
+              <i onclick="editNote()" class="fa-solid fa-edit edit"></i>
+              <i class="fa-solid fa-trash-can delete"></i>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
