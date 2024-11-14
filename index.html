@@ -17,8 +17,8 @@
     <title>My Note App</title>
 </head>
 <body>
-    <h1>My Note App</h1>
-    <div class="wrapper">
+    <!--<h1>My Note App</h1>
+     <div class="wrapper">
         <p id="error-message"></p>
         </div>
         <div class="input-container">
@@ -43,7 +43,7 @@
             oninput="filterNotes()"
           />
         </div>
-        <div class="note-container">
+        <div class="note-container" id="note-container">
           <h2>Your Notes</h2>
           <div class="note-item">
             <p class="note">A note</p>
@@ -53,6 +53,37 @@
             </div>
           </div>
         </div>
+        <div id="notesDisplay"></div>
+    </div> -->
+    <div id="make-note-container" class="make-note-container">
+        <h1>Your Notes</h1>
+        <p id="error-message"></p>
+            <form id="form" class="input-container">
+                <input type="text" 
+                    name="note" 
+                    class="note-input"
+                    id="note-input" 
+                    placeholder="Your note..."
+                />
+                <button id="addBtn" type="submit">Add to Notes</button>
+            </form>
+            <div class="input-container filter-container">
+                <input
+                  type="text"
+                  id="notefilter"
+                  placeholder="Search"
+                  oninput="filterNotes()"
+                />
+            </div>
+                <div class="note-item">
+                    <p class="note" id="notesDisplay">A note</p>
+                    <div class="icons">
+                      <i onclick="editNote()" class="fa-solid fa-edit edit"></i>
+                      <i class="fa-solid fa-trash-can delete" id="delete"></i>
+                </div>
+                <!-- <div id="notesDisplay">
+
+                </div> -->
     </div>
     <script src="script.js"></script>
 </body>
