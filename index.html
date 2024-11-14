@@ -19,31 +19,18 @@
 <body>
     <h1>My Note App</h1>
     <div class="wrapper">
-        <!-- <div class="modal-overlay" id="modalOverlay">
-            <div class="modal-content">
-                <button class="close-button" id="closeButton">&times;</button>
-                <h2 id="modalTitle"></h2>
-                <p id="modalDescription"></p>
-                    <input
-                        type="text"
-                        name="text"
-                        class="modal-input"
-                        id="modal-input"
-                        placeholder="Redigera uppgift här"
-                    />
-                <button id="editBtn" type="submit">Edit Note</button>
-            </div> -->
+        <p id="error-message"></p>
         </div>
         <div class="input-container">
           <form class="container-field">
-            <div class="input-wrapper">
+            <div class="input-note">
               <input
-                type="text"
-                name="note"
-                class="note-input"
-                id="note-input"
-                placeholder="Your note..."
-              />
+              type="text"
+              name="note"
+              class="note-input"
+              id="note-input"
+              placeholder="Your note..."
+            />
               <button id="addBtn" type="submit">Add to Notes</button>
             </div>
           </form>
@@ -56,13 +43,13 @@
             oninput="filterNotes()"
           />
         </div>
-        <div class="container-note">
+        <div class="note-container">
           <h2>Your Notes</h2>
           <div class="note-item">
             <p class="note">A note</p>
             <div class="icons">
               <i onclick="editNote()" class="fa-solid fa-edit edit"></i>
-              <i class="fa-solid fa-trash-can delete"></i>
+              <i class="fa-solid fa-trash-can delete" id="delete"></i>
             </div>
           </div>
         </div>
