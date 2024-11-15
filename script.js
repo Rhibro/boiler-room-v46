@@ -135,9 +135,9 @@ function displayNote() {
         iconsDiv.className = 'icons';
         
         // Creates edit icon
-        const editIcon = document.createElement('i');
-        editIcon.className = 'fa-solid fa-edit';
-        editIcon.addEventListener('click', () => editNote(index));
+        // const editIcon = document.createElement('i');
+        // editIcon.className = 'fa-solid fa-edit';
+        // editIcon.addEventListener('click', () => editNote(index));
         
         // Creates delete icon
         const deleteIcon = document.createElement('i');
@@ -158,7 +158,7 @@ function displayNote() {
         // Assemble the elements
         textContainer.appendChild(titleElement);
         textContainer.appendChild(contentElement);
-        iconsDiv.appendChild(editIcon);
+        // iconsDiv.appendChild(editIcon);
         iconsDiv.appendChild(deleteIcon);
         textContainer.appendChild(dateElement);
         noteElement.appendChild(textContainer);
@@ -224,9 +224,9 @@ function filterNotes() {
         iconsDiv.className = 'icons';
         
         // Create edit icon
-        const editIcon = document.createElement('i');
-        editIcon.className = 'fa-solid fa-edit';
-        editIcon.addEventListener('click', () => editNote(index));
+        // const editIcon = document.createElement('i');
+        // editIcon.className = 'fa-solid fa-edit';
+        // editIcon.addEventListener('click', () => editNote(index));
         
         // Create delete icon
         const deleteIcon = document.createElement('i');
@@ -243,7 +243,7 @@ function filterNotes() {
         textContainer.appendChild(titleElement);
         textContainer.appendChild(contentElement);
         textContainer.appendChild(dateElement);
-        iconsDiv.appendChild(editIcon);
+        // iconsDiv.appendChild(editIcon);
         iconsDiv.appendChild(deleteIcon);
         noteElement.appendChild(textContainer);
         noteElement.appendChild(iconsDiv);
