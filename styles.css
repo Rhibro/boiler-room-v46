@@ -24,6 +24,7 @@ h1 {
     font-optical-sizing: auto;
     padding-top: 2rem;
     padding-bottom: .5rem;
+    text-shadow: 2px 2px 2px #f4f1f1;
     font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
 }
 
@@ -50,6 +51,7 @@ form {
     padding: .2rem;
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
+    border: 3px solid black;
 }
 
 .note-input {
@@ -57,15 +59,17 @@ form {
     width: 20rem; 
     column-count: 40;
     padding: .2rem;
-    
+    border: 3px solid black;
 }
 
 .addBtn {
     margin: 1rem;
     height: 3rem;
-    width: 8rem;
-    background-color: #979BA8;
-    border: 2px solid #281E07;
+    width: 10rem;
+    font-weight: 800;
+    background-color: #850363;
+    color: white;
+    border: 2px solid #000000;
     border-radius: 5px;
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
@@ -75,8 +79,8 @@ form {
 }
 
 .addBtn:hover {
-    background-color: rgb(11, 54, 11);
-    color: white;
+    background-color:  #8F93A0;
+    color: black;
 }
 
 .search {
@@ -85,6 +89,7 @@ form {
     width: 20rem;
     height: 2rem;
     padding: .2rem;
+    border: 3px solid black;
 }
 
 .notesDisplay {
@@ -139,19 +144,12 @@ form {
     
 }
 
-/* Optional: Add hover effect */
 .note-content.collapsed:hover {
-    background-color: #f5f5f5;
+    background-color: #F8C105;
 }
 
-/* Make sure icons remain clickable */
 .icons {
     z-index: 1;
     padding-left: 10px;  
 }
   
-
-@media screen and (min-width: 400px) {
-
-   
-}
