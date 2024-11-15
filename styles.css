@@ -134,7 +134,6 @@ form {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-height: 1.2em;
 }
 
 .note-content.expanded p {

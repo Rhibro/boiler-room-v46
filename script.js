@@ -1,9 +1,26 @@
 let notesApp = [];
 
-// loads note from local storage
+// loads notes from displayNote function
 window.addEventListener('load', () => {
     displayNote();
 });
+
+// safety check
+let notes = [];
+// get notes from localStorage and convert JSON string to array
+// if localStorage is empty use an empty array instead
+try {
+    notes = JSON.parse(localStorage.getItem('notes')) || [];
+    // check that it is actually an array, if not then throw an error
+    if (!Array.isArray(notes)) throw new Error('Invalid format');
+} catch (e) {
+    // if anything goes wrong i.e. corrupted data in localStorage
+    // show an error message in the console
+    console.error('Corrupted data in localStorage, resetting.', e);
+    // reset localStorage to an empty array
+    localStorage.setItem('notes', JSON.stringify([]));
+}
+
 
 // clears away the error message when user has typed something in both input fields
 const noteInputElement = document.getElementById('note-input');
@@ -21,7 +38,7 @@ addBtn.addEventListener('click', function (event) {
 
 // this functions checks for errors, ensures titles are unique,
 // creates note object, stores note in localStorage
-// updates display to show newly added note 
+// updates display to show newly added notes
 function addNote() {
 
     // retrieves html elements with IDs and extracts the values in the fields (user input)
@@ -62,7 +79,7 @@ function addNote() {
     };
 
     // adds noteObject to notes array 
-    // updates local storage by converting the updated notes arrys back to a Json string
+    // updates local storage by converting the updated notes arrays back to a Json string
     // using stringify() and storing it under key notes
     notes.push(noteObject);
     localStorage.setItem('notes', JSON.stringify(notes));
@@ -73,7 +90,8 @@ function addNote() {
     displayNote(); 
 }
 
-// deletes note by finding it in local storage removing it then stringifying the nptes once again to be displayed 
+// deletes note by finding it in local storage removing it then 
+// stringifying the notes once again to be displayed 
 function deleteNote(index) {
     const notes = JSON.parse(localStorage.getItem('notes')) || [];
     notes.splice(index, 1);
