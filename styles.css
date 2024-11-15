@@ -2,32 +2,156 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: '"Roboto Mono", serif;';
+    overflow-x: hidden;
 }
 
 body {
-    background-image: url(/images/rustic-desk-top.jpg);
+    background-image: url(/images/yellow-desk-top.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
 }
 
 h1 {
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
-    padding-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: .5rem;
     font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
 }
 
-h2 {
-    font-size: clamp(1rem, 2vw + 1rem, 2rem);
+.error-message {
+    color:black;
+    font-size: 1rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 2px #f00909;
+    text-align: center;
 }
 
 
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-input {
+    width: 20rem;
+    height: 2rem;
+    margin: 1rem;
+    padding: .2rem;
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+}
+
+.note-input {
+    height: 5rem;
+    width: 20rem; 
+    column-count: 40;
+    padding: .2rem;
+    
+}
+
+.addBtn {
+    margin: 1rem;
+    height: 3rem;
+    width: 8rem;
+    background-color: #979BA8;
+    border: 2px solid #281E07;
+    border-radius: 5px;
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.addBtn:hover {
+    background-color: rgb(11, 54, 11);
+    color: white;
+}
+
+.search {
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    width: 20rem;
+    height: 2rem;
+    padding: .2rem;
+}
+
+.notesDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.note {
+    height: 15rem;
+    width: 15rem;
+    background-color: beige;
+    margin: 1rem;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.note-content {
+    padding: .5rem;
+    margin: .5rem;
+}
+.icons {
+    padding: .5rem;
+    margin: .5rem;
+}
+.note-date {
+    color: #888;
+    font-size: 0.8em;
+    display: block;
+}
+
+.note-content {
+    flex-grow: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: inherit;  
+}
+
+.note-content.collapsed p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 1.2em;
+}
+
+.note-content.expanded p {
+    white-space: normal;
+    overflow: visible;
+    max-height: none;
+    
+}
+
+/* Optional: Add hover effect */
+.note-content.collapsed:hover {
+    background-color: #f5f5f5;
+}
+
+/* Make sure icons remain clickable */
+.icons {
+    z-index: 1;
+    padding-left: 10px;  
+}
   
+
+@media screen and (min-width: 400px) {
+
+   
+}
