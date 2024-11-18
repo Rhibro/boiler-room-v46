@@ -1,6 +1,6 @@
 # boiler-room-v46
 
-This project is a simple notes application that allows users to create, display, edit, and delete notes. 
+This project is a simple notes application that allows users to create, display, and delete notes. 
 Here’s a summary of its main features:
 
 <h3>Initialization:</h3> The application loads existing notes from localStorage when the window is opened, ensuring any previously saved notes are displayed.
