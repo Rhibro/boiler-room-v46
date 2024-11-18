@@ -21,8 +21,7 @@ try {
     localStorage.setItem('notes', JSON.stringify([]));
 }
 
-
-// clears away the error message when user has typed something in both input fields
+// clears away the error message when user has typed something in the input field
 const noteInputElement = document.getElementById('note-input');
 noteInputElement.addEventListener('input', function() {
     document.getElementById('error-message').innerHTML = '';
@@ -60,7 +59,7 @@ function addNote() {
         return;
     }
 
-    // checks to see if the fields are empty or contain whitespave with trim() 
+    // checks to see if the fields are empty or contain whitespace with trim() 
     // (title and content) if empty user gets an error message
     if (!titleInput.trim()) {
         document.getElementById('error-message').innerHTML = 'None of the fields can be left empty!';
@@ -80,7 +79,7 @@ function addNote() {
 
     // adds noteObject to notes array 
     // updates local storage by converting the updated notes arrays back to a Json string
-    // using stringify() and storing it under key notes
+    // using stringify() and storing it under the key notes
     notes.push(noteObject);
     localStorage.setItem('notes', JSON.stringify(notes));
 
@@ -134,11 +133,6 @@ function displayNote() {
         const iconsDiv = document.createElement('div');
         iconsDiv.className = 'icons';
         
-        // Creates edit icon
-        // const editIcon = document.createElement('i');
-        // editIcon.className = 'fa-solid fa-edit';
-        // editIcon.addEventListener('click', () => editNote(index));
-        
         // Creates delete icon
         const deleteIcon = document.createElement('i');
         deleteIcon.className = 'fa-solid fa-trash-can';
@@ -158,7 +152,6 @@ function displayNote() {
         // Assemble the elements
         textContainer.appendChild(titleElement);
         textContainer.appendChild(contentElement);
-        // iconsDiv.appendChild(editIcon);
         iconsDiv.appendChild(deleteIcon);
         textContainer.appendChild(dateElement);
         noteElement.appendChild(textContainer);
@@ -223,11 +216,6 @@ function filterNotes() {
         const iconsDiv = document.createElement('div');
         iconsDiv.className = 'icons';
         
-        // Create edit icon
-        // const editIcon = document.createElement('i');
-        // editIcon.className = 'fa-solid fa-edit';
-        // editIcon.addEventListener('click', () => editNote(index));
-        
         // Create delete icon
         const deleteIcon = document.createElement('i');
         deleteIcon.className = 'fa-solid fa-trash-can';
@@ -243,7 +231,6 @@ function filterNotes() {
         textContainer.appendChild(titleElement);
         textContainer.appendChild(contentElement);
         textContainer.appendChild(dateElement);
-        // iconsDiv.appendChild(editIcon);
         iconsDiv.appendChild(deleteIcon);
         noteElement.appendChild(textContainer);
         noteElement.appendChild(iconsDiv);
@@ -251,64 +238,3 @@ function filterNotes() {
     });    
 }
   
-// function editNote(index) {
-//     const notes = JSON.parse(localStorage.getItem('notes')) || [];
-//     const note = notes[index];
-    
-//     // Fill the input fields with current note data
-//     const titleInputElement = document.getElementById('title-input');
-//     const noteInputElement = document.getElementById('note-input');
-//     titleInputElement.value = note.title;
-//     noteInputElement.value = note.content;
-
-//     const editBtn = document.getElementsByClassName('fa-solid fa-edit');
-//     editBtn.textContent = 'Update Note';
-
-//     // editBtn.onclick = function(e) {
-//     //     e.preventDefault();
-//     // }
-
-//     const newTitle = titleInputElement.value;
-//         const newContent = noteInputElement.value;
-        
-//         // Check for empty fields
-//         if (!newTitle.trim() || !newContent.trim()) {
-//             document.getElementById('error-message').innerHTML = 'None of the fields can be left empty!';
-//             return;
-//         }
-        
-//         // Check for duplicate titles (excluding the current note)
-//         const duplicateTitle = notes.some((note, i) => 
-//             i !== index && note.title.toLowerCase() === newTitle.toLowerCase()
-//         );
-//         if (duplicateTitle) {
-//             document.getElementById('error-message').innerHTML = 'You have used that title already, try something new!';
-//             return;
-//         }
-        
-//         // Update the note
-//         notes[index] = {
-//             title: newTitle,
-//             content: newContent,
-//             date: note.date // Keep the original creation date
-//         };
-        
-//         // Save to localStorage
-//         localStorage.setItem('notes', JSON.stringify(notes));
-        
-//         // Clear inputs and reset button
-//         titleInputElement.value = '';
-//         noteInputElement.value = '';
-        
-        
-//         // Refresh the display
-//         displayNote();
-//     };
-
-
-//     let editBtn = document.getElementsByClassName('fa-solid fa-edit');
-//     editBtn.addEventListener('click', function (event) {
-//         event.preventDefault();
-//         editNote();
-//     })
-
